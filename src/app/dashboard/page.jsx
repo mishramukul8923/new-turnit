@@ -1,4 +1,6 @@
 import { AppSidebar } from "@/components/app-sidebar"
+import { ModeToggle } from "@/components/mode-toggle";
+import { ThemeProvider } from "@/components/theme-provider";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -16,7 +18,14 @@ import {
 
 export default function Page() {
   return (
-    (<SidebarProvider>
+    <>
+     <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+    <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2">
@@ -34,6 +43,9 @@ export default function Page() {
                 <BreadcrumbItem>
                   <BreadcrumbPage>Data Fetching</BreadcrumbPage>
                 </BreadcrumbItem>
+                <BreadcrumbItem>
+                <ModeToggle/>
+                </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
           </div>
@@ -47,6 +59,8 @@ export default function Page() {
           <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
         </div>
       </SidebarInset>
-    </SidebarProvider>)
+    </SidebarProvider>
+    </ThemeProvider>
+    </>
   );
 }
