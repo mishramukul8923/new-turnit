@@ -1,8 +1,14 @@
 import { ModeToggle } from "@/components/mode-toggle";
-import { ForgotEmailPassword } from "@/components/forgot-email-pass"
+import { ForgotPassword } from "@/components/forgot-password";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export default function Page() {
+
+
+
+
+
+  
   return (
     <>
     <ThemeProvider
@@ -15,7 +21,7 @@ export default function Page() {
 <ModeToggle/>
 </div>
     <div className="flex h-screen w-full items-center justify-center px-4">
-      <ForgotEmailPassword />
+      <ForgotPassword/>
     </div>
     </ThemeProvider>
     </>
